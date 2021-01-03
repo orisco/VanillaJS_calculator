@@ -1,0 +1,76 @@
+@mixin row($col) {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $col;
+  font-family: "Mulish", sans-serif;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+* {
+  margin: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  color: rgb(194, 194, 194);
+  font-size: 30px;
+  cursor: move;
+}
+
+.container {
+  position: absolute;
+  width: 200px;
+  height: 410px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 10px 17px 39px 0px rgba(0, 0, 0, 0.73);
+  border-radius: 20%;
+
+  p {
+    cursor: pointer;
+    border: rgb(93, 140, 241) solid 1px;
+    border-radius: 5px;
+    width: 40px;
+    text-align: center;
+  }
+  p:hover {
+    background-color: rgba(190, 190, 190, 0.4);
+  }
+
+  .row1 {
+    @include row(#0d1628);
+    height: 250px;
+    border-radius: 20px 20px 0 0;
+    font-size: 60px;
+    color: rgb(93, 140, 241);
+    p {
+      border: none;
+      margin-left: -30px;
+    }
+    p:hover {
+      background-color: none;
+    }
+  }
+  .row2 {
+    @include row(#13213b);
+    font-size: 25px;
+  }
+  .row3 {
+    @include row(#1a2c4f);
+  }
+  .row4 {
+    @include row(#203663);
+  }
+  .row5 {
+    @include row(#274177);
+  }
+  .row6 {
+    @include row(#2d4c89);
+    border-radius: 0 0 20px 20px;
+    padding-bottom: 10px;
+  }
+}
